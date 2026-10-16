@@ -1,43 +1,68 @@
-// Clase Estudiante: representa a un estudiante con sus datos básicos
+/**
+ * Clase Estudiante
+ * Representa a un estudiante con sus datos basicos:
+ * nombre, edad y promedio.
+ * Esta clase demuestra la declaracion de atributos,
+ * un constructor y metodos.
+ */
 public class Estudiante {
 
-    // Atributos (características del estudiante)
+    // Atributos de la clase (datos que guarda cada objeto)
     private String nombre;
     private int edad;
     private double promedio;
 
-    // Constructor: se ejecuta al crear un objeto, inicializa los atributos
+    /**
+     * Constructor de la clase.
+     * Se ejecuta al crear un objeto Estudiante y
+     * asigna los valores iniciales a los atributos.
+     * @param nombre   Nombre del estudiante
+     * @param edad     Edad del estudiante
+     * @param promedio Promedio del estudiante
+     */
     public Estudiante(String nombre, int edad, double promedio) {
         this.nombre = nombre;
         this.edad = edad;
         this.promedio = promedio;
     }
 
-    // Método para mostrar los datos del estudiante
+    /**
+     * Metodo mostrarDatos
+     * Imprime en pantalla los datos del estudiante.
+     */
     public void mostrarDatos() {
         System.out.println("Nombre: " + nombre);
         System.out.println("Edad: " + edad);
         System.out.println("Promedio: " + promedio);
+        System.out.println("Aprobado: " + estaAprobado());
     }
 
-    // Método que indica si el estudiante está aprobado
+    /**
+     * Metodo estaAprobado
+     * Devuelve true si el promedio es mayor o igual a 6,
+     * de lo contrario devuelve false.
+     * @return true si esta aprobado, false si no
+     */
     public boolean estaAprobado() {
-        return promedio >= 7.0;
+        return promedio >= 6;
     }
 
-    // Programa principal: aquí se instancian los objetos y se prueban los métodos
+    /**
+     * Metodo principal (main)
+     * Punto de entrada del programa. Aqui se instancian
+     * dos objetos de la clase Estudiante y se prueban
+     * sus metodos.
+     */
     public static void main(String[] args) {
-        // Instanciación de objetos a partir de la clase
+        // Instanciacion de dos objetos Estudiante
         Estudiante alumno1 = new Estudiante("Alan", 20, 8.5);
         Estudiante alumno2 = new Estudiante("Mich", 18, 6.2);
 
-        // Uso de los métodos
+        // Prueba de los metodos de cada objeto
         System.out.println("--- Estudiante 1 ---");
         alumno1.mostrarDatos();
-        System.out.println("Aprobado: " + alumno1.estaAprobado());
 
         System.out.println("--- Estudiante 2 ---");
         alumno2.mostrarDatos();
-        System.out.println("Aprobado: " + alumno2.estaAprobado());
     }
 }
